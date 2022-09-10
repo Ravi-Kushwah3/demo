@@ -1,0 +1,43 @@
+package com.nit;
+
+public class ClassC
+{
+	int a = 10;
+	static int b = 20;
+ClassC meth1()
+{ 
+	int a = 30;
+	System.out.println(this.a);
+	System.out.println(this.b);
+	System.out.println(a+b);
+	//meth2();
+	//this.meth2();
+	return this;
+}
+ ClassC meth2()
+{
+	System.out.println("meth2() called ");
+	return this;
+	
+}
+int meth3()
+{
+	System.out.println("method 3 called");
+	return 100 ;
+}
+ClassC()
+{
+	this(20);
+	System.out.println("default constructor");
+}
+ClassC(int a)
+{
+	System.out.println("parameterized constructor "+a);
+}
+public static void main(String[] args) 
+{
+int result=new ClassC().meth1().meth2().meth3()+1;
+ System.out.println("result : "+result);
+
+}
+}
